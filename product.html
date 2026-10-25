@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANS ON THE WALL</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background: #10051f;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    padding: 30px 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #4c1d95, #a21caf, #6d28d9);
+    box-shadow: 0 5px 30px #a855f766;
+}
+
+header h1 {
+    font-size: 34px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #f3e8ff;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    background: #190b2b;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #9333ea;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e9d5ff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f0abfc;
+    text-shadow: 0 0 12px #d8b4fe;
+}
+
+/* HERO */
+.hero {
+    min-height: 350px;
+    padding: 80px 20px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at top, #581c87, transparent 65%),
+        linear-gradient(160deg, #170727, #30104c);
+}
+
+.hero .tag {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 20px;
+    border: 1px solid #c084fc;
+    border-radius: 30px;
+    color: #e9d5ff;
+    font-size: 13px;
+}
+
+.hero h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: #f5d0fe;
+    margin-bottom: 18px;
+}
+
+.hero h2 span {
+    color: #c084fc;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    color: #e9d5ff;
+    line-height: 1.8;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 27px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #7c3aed, #c026d3);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 20px #a855f766;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px #c084fc;
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    padding: 45px 15px 10px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    color: #d8b4fe;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #c4b5fd;
+    line-height: 1.7;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 25px 60px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 22px;
+    background: linear-gradient(160deg, #29113f, #180925);
+    border: 1px solid #7e22ce;
+    box-shadow: 0 8px 25px #00000044;
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-9px);
+    border-color: #e879f9;
+    box-shadow: 0 0 28px #a855f755;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 23px 18px;
+}
+
+.card h3 {
+    color: #e9d5ff;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.card p {
+    min-height: 48px;
+    color: #c4b5fd;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 29px;
+    font-weight: bold;
+    color: #f0abfc;
+    margin: 18px 0;
+}
+
+.card .button {
+    padding: 12px 24px;
+}
+
+/* ABOUT */
+.about {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    padding: 35px 25px;
+    text-align: center;
+    line-height: 1.9;
+    background: linear-gradient(135deg, #29113f, #180925);
+    border: 1px solid #7e22ce;
+    border-radius: 22px;
+    box-shadow: 0 0 25px #7c3aed22;
+}
+
+.about h2 {
+    color: #e9d5ff;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.about p {
+    color: #d8b4fe;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 45px 20px;
+    background: linear-gradient(135deg, #4c1d95, #86198f);
+    line-height: 2;
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.contact p {
+    color: #f3e8ff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #0b0413;
+    color: #c4b5fd;
+    font-size: 13px;
+}
+
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 27px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    .hero {
+        padding: 60px 18px;
+    }
+
+    .products {
+        padding: 25px 20px 45px;
+    }
+
+    .about {
+        margin: 0 20px 40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1> SPECIAL MENU</h1>
+    <p>VANS MADE FOR YOUR LIFETIME</p>
+</header>
+
+<nav>
+   
+    <a href="homepage.html">Homepage</a>
+    <a href="product.html">Product</a>
+    <a href="about.html">About </a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+    <div class="tag">YOURS STYLE,YOUR RULES,YOUR VANS</div>
+    <h2>KEEP MOVING <span>KEEP IT ORIGINAL!</span></h2>
+    <p>
+        Van is a popular footwear and lifestyle brand known for its stylish shoes, comfortable designs, and 
+        skateboarding culture.
+    </p>
+    <a href="#products" class="button">Explore Our Products ↗</a>
+</section>
+
+<div class="section-title" id="products">
+    <h2>Our Special Menu</h2>
+    <p>VANS:COMFORT MEETS CREATIVITY!</p>
+</div>
+
+<section class="products">
+
+    <div class="card">
+        <img
+        src="van3.webp"
+        alt="Creamy dessert for Classic Mango Graham">
+
+        <div class="card-content">
+            <h3>Vans Knu Skool Lace-Up Sneakers - US5</h3>
+            <p>Vans Skate Old Skool Black/White US 4s.</p>
+            <div class="price">5000</div>
+            <a href="#contact" class="button">Order Now </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img
+        src="van1.webp"
+        alt="Dessert inspiration for Special Mango Graham">
+
+        <div class="card-content">
+            <h3>Vans Authentic 44 Low-Top Sneakers - US12</h3>
+            <p>Vans Lace-Up Low-Top Sneakers - US8.</p>
+            <div class="price">10000</div>
+            <a href="#contact" class="button">Order Now </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img
+        src="van2.webp"
+        alt="Sweet dessert inspiration for Family Mango Graham">
+
+        <div class="card-content">
+            <h3>Vans - Unisex - Knu Skool Sneakers - Black - Canvas/fabric/rubber - 5
+</h3>
+            <p>VANS Authentic.</p>
+            <div class="price">4000</div>
+            <a href="#contact" class="button">Order Now </a>
+        </div>
+    </div>
+
+</section>
+
+
+</body>
+</html>
